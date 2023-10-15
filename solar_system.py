@@ -5,13 +5,23 @@ import random
 from planets import mars
 
 
+# Global constants
+SPARKLING_CHARS = "*+.°^><o°~\'" + 100 * " "  # more spaces means more cosmic emptyness
+
+
 def sparkle(width: int = 60, num_sparkle_lines: int = 2):
-    # Define a set of sparkling characters.
-    sparkling_chars = "*+.°^><o°~\'" + 100 * " "  # more spaces means more cosmic emptyness
-    
+    """
+    Prints random sparkling characters for a cosmic ascii view.
+
+    Parameters
+    ----------
+    width (int): 
+        The number of characters in each line of sparkle. Default is 60.
+    num_sparkle_lines (int): 
+        The number of lines of sparkle to be printed. Default is 2.
+    """
     for _ in range(num_sparkle_lines):
-        # Generate a string of `width` random sparkling characters.
-        line = "".join(random.choice(sparkling_chars) for _ in range(width))
+        line = "".join(random.choice(SPARKLING_CHARS) for _ in range(width))
         print(line)
 
 
